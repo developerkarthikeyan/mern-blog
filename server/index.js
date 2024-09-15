@@ -10,7 +10,9 @@ dotenv.config();
 
 const PORT=process.env.PORT
 
-
+app.get("/"),(req,res)=>{
+res.status(200).json({message:"server is running"})
+}
 mongoose.connect(process.env.MONGO_URL).then(()=>{
     console.log("database conneted")}).catch((err)=>{
         console.log(err);
