@@ -86,7 +86,8 @@ function SinglePost() {
 <div  className='h-32 w-32 absolute left-12 top-28 bg-gray-200 rounded-full '>
 <img
                 className=" w-full h-full rounded-full"
-                src={data.profileid.imageURL=="no-image"?defaaultimage:data.profileid.imageURL}
+                              src={data?.profileid?.imageURL === "no-image" ? defaaultimage : data?.profileid?.imageURL}
+
                 alt="Profile"
             />
 </div>
