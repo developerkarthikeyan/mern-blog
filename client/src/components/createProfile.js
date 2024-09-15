@@ -10,7 +10,7 @@ import { useLocation } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage } from '../firebase.js'; 
-
+import BaseUrl from "../url.js";
 import { ToastContainer, toast,Slide  } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function Newprofile(children){
@@ -93,7 +93,7 @@ else{
 
 
             
-                const response = await axios.post("http://localhost:8000/createProfile", formData, {
+                const response = await axios.post(`${BaseUrl}/createProfile`, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
