@@ -11,13 +11,6 @@ dotenv.config();
 const PORT=process.env.PORT
 
 
-const admin = require('firebase-admin');
-const serviceAccount = require('./blog-api-770cc-firebase-adminsdk-w5y04-bc87963728.json'); // Replace with the path to your key
-
-
-
-const bucket = admin.storage().bucket();
-
 mongoose.connect(process.env.MONGO_URL).then(()=>{
     console.log("database conneted")}).catch((err)=>{
         console.log(err);
