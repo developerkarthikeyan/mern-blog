@@ -59,8 +59,8 @@ res.cookie('token', token, {
     expires:new Date(Date.now()+90+90*24*60*60*1000),
        httpOnly: true,
       // Secure cookies over HTTPS in production
-    sameSite: 'strict',  // Prevents CSRF attacks
-    domain: 'https://mern-blog-yd5v.onrender.com',  // Makes the cookie inaccessible to JavaScript on the client side
+     sameSite: 'None',  // Use None if the frontend and backend are on different domains
+  // Prevents CSRF attacks
 })
 res.status(200).json(userexsists);
 
