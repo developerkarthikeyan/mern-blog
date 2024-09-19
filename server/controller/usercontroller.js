@@ -55,12 +55,15 @@ const Loginuser=async(req,res)=>{
 console.log(token);
 
 res.cookie('token', token, {
+res.cookie('token', token, {
+  expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000), // 90 days from now
+  httpOnly: true, // Prevent access via JavaScript
+  secure: true,   // Send cookie only over HTTPS
+  sameSite: 'None', // Required for cross-domain cookies
+  domain: 'mern-blog-six-theta.vercel.app', // Only root domain, no protocol
+  path: '/',     // Allow cookie to be sent on all routes
 
-    expires:new Date(Date.now()+90+90*24*60*60*1000),
-       httpOnly: true,
-      // Secure cookies over HTTPS in production
-     sameSite: 'None',  // Use None if the frontend and backend are on different domains
-  // Prevents CSRF attacks
+
 })
 res.status(200).json(userexsists);
 
