@@ -58,8 +58,8 @@ res.cookie('token', token, {
   expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000), // 90 days from now
   httpOnly: true, // Prevent access via JavaScript
  // Required for cross-domain cookies
-  domain: 'mern-blog-six-theta.vercel.app', // Only root domain, no protocol
-     // Allow cookie to be sent on all routes
+    secure:true
+
 })
 res.status(200).json(userexsists);
 
